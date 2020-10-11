@@ -14,7 +14,7 @@ Duplicates are skipped by default (before download based on URL, additionally af
 ## Installation
 [Download the binary](https://github.com/sammax/reddit-image-downloader/releases) or build it yourself (requires Go 1.13 or newer):
 ```shell script
-$ git clone https://github.com/sammax/reddit-image-downloader
+$ git clone --depth=1 https://github.com/sammax/reddit-image-downloader
 $ cd reddit-image-downloader
 $ go build .
 ```
