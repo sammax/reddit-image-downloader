@@ -459,8 +459,8 @@ func fetchSingleImage(u string, submission Submission) error {
 	}
 
 	dir := filepath.Dir(p)
-	_ = os.MkdirAll(dir, os.ModeDir)
-	err = ioutil.WriteFile(p, data, os.ModePerm)
+	_ = os.MkdirAll(dir, 0o777)
+	err = ioutil.WriteFile(p, data, 0o666)
 	if err != nil {
 		log.Printf("fetching %s (%s) => %v", u, submission.Permalink, err)
 		return err
@@ -606,8 +606,8 @@ func fetchImgur(submission Submission) error {
 			}
 
 			dir := filepath.Dir(p)
-			_ = os.MkdirAll(dir, os.ModeDir)
-			err = ioutil.WriteFile(p, data, os.ModePerm)
+			_ = os.MkdirAll(dir, 0o777)
+			err = ioutil.WriteFile(p, data, 0o666)
 			if err != nil {
 				log.Printf("fetching %s (%s) => %v", u, submission.Permalink, err)
 				continue
